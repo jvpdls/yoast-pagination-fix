@@ -19,8 +19,10 @@ function rel_next_prev(){
         <link rel="prev" href="<?php echo get_pagenum_link( $paged - 1 ); ?>" /><?php
     }
 
-    if ( get_next_posts_page_link() ) { ?>
+    if ( get_next_posts_page_link() ) {	
+		echo "\n"; ?>
         <link rel="next" href="<?php echo get_pagenum_link( $paged + 1 ); ?>" /><?php
+		echo "\n";
     }
 
 }
