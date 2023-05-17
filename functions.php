@@ -1,6 +1,6 @@
 <?php
 
-// Yoast pagination fix
+// yoast pagination canonical fix
 function my_custom_canonical_url( $canonical_url ) {
     $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
@@ -10,3 +10,18 @@ function my_custom_canonical_url( $canonical_url ) {
     return $canonical_url;
 }
 add_filter( 'wpseo_canonical', 'my_custom_canonical_url' );
+
+// get prev and next paginated links
+function rel_next_prev(){
+    global $paged;
+
+    if ( get_previous_posts_link() ) { ?>
+        <link rel="prev" href="<?php echo get_pagenum_link( $paged - 1 ); ?>" /><?php
+    }
+
+    if ( get_next_posts_page_link() ) { ?>
+        <link rel="next" href="<?php echo get_pagenum_link( $paged + 1 ); ?>" /><?php
+    }
+
+}
+add_action( 'wp_head', 'rel_next_prev' );
