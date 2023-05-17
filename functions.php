@@ -1,6 +1,6 @@
 <?php
 
-// yoast pagination canonical fix
+// Yoast pagination canonical fix
 function my_custom_canonical_url( $canonical_url ) {
     $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
@@ -11,7 +11,7 @@ function my_custom_canonical_url( $canonical_url ) {
 }
 add_filter( 'wpseo_canonical', 'my_custom_canonical_url' );
 
-// get prev and next paginated links
+// Yoast rel="prev" and rel="next" fix
 function rel_next_prev(){
     global $paged;
 
