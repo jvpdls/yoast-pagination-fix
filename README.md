@@ -4,3 +4,5 @@ This repository contains a simple code that fixes two common Yoast errors relate
 - missing rel="next" and rel="prev" tags.
 
 This solution showed to work for different *outdated* sites. If your website's PHP, WP and Yoast versions are all up-to-date, than you'd be fine with pagination.
+
+Please test thoroughly before implementing this solution on your production environment.
